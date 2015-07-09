@@ -1,0 +1,2 @@
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\assemblies\SwitchMedia.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\assemblies\Switch.Core.dll

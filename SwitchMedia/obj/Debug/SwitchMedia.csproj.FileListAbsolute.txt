@@ -1,0 +1,15 @@
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\SwitchMedia.csprojResolveAssemblyReference.cache
+D:\Doc\Xamarin\SwitchMedia\bin\Debug\SwitchMedia.dll
+D:\Doc\Xamarin\SwitchMedia\bin\Debug\SwitchMedia.pdb
+D:\Doc\Xamarin\SwitchMedia\bin\Debug\SwitchMedia.SwitchMedia.apk
+D:\Doc\Xamarin\SwitchMedia\bin\Debug\SwitchMedia.SwitchMedia-Signed.apk
+D:\Doc\Xamarin\SwitchMedia\bin\Debug\Switch.Core.dll
+D:\Doc\Xamarin\SwitchMedia\bin\Debug\Switch.Core.pdb
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\SwitchMedia.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\SwitchMedia.pdb
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\android\bin\SwitchMedia.SwitchMedia.apk
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\res\layout\main.xml
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\res\values\strings.xml
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\res\drawable\icon.png
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\R.cs.flag
+D:\Doc\Xamarin\SwitchMedia\obj\Debug\uploadflags.txt

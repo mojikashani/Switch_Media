@@ -1,0 +1,4 @@
+SwitchMedia.MainActivity, SwitchMedia;md5b49a35ef1515900a3d325724a6479a61.MainActivity
+SwitchMedia.MainActivity, SwitchMedia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b49a35ef1515900a3d325724a6479a61.MainActivity
+SwitchMedia.MainActivity;md5b49a35ef1515900a3d325724a6479a61.MainActivity
+switchmedia.MainActivity;md5b49a35ef1515900a3d325724a6479a61.MainActivity
