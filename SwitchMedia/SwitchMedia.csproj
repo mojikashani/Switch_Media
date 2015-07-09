@@ -52,7 +52,9 @@
     <Compile Include="App Layer\EventHandler.cs" />
     <Compile Include="App Layer\IEventHandler.cs" />
     <Compile Include="App Layer\IMyHttpClient.cs" />
+    <Compile Include="App Layer\ISurfaceViewRefresher.cs" />
     <Compile Include="App Layer\MyHttpClient.cs" />
+    <Compile Include="App Layer\SurfaceViewRefresher.cs" />
     <Compile Include="Screens\MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

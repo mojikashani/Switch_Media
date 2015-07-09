@@ -12,10 +12,9 @@ using Android.Widget;
 
 namespace SwitchMedia.App_Layer
 {
-    public interface IEventHandler
+    public interface ISurfaceViewRefresher
     {
-        void onScreenClick(int x, int y);
-        void onScreenDoubleClick(int x, int y);
-        void onScreenDrag(int preX, int preY, int toX, int toY);
+        void Refresh();
+        
     }
 }

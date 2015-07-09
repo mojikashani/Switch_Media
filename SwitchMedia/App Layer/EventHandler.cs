@@ -14,10 +14,13 @@ namespace SwitchMedia.App_Layer
         private IPatternCache patternCache;
         private IViewCollection viewCollection;
         private IMyHttpClient myHttpClient;
+        private ISurfaceViewRefresher surfaceViewRefresher;
         private int minRadius;
         private int maxRadius;
         private int screenWidth;
         private int screenHeight;
+        private bool isImageThreadRunning = false;
+        private bool isColorThreadRunning = false;
         public EventHandler(int _screenWidth, int _screenHeight, int _minRadius, int _maxRadius)
         {
             screenHeight = _screenHeight;
@@ -27,10 +30,11 @@ namespace SwitchMedia.App_Layer
             patternCache = new PatternCache(CACHE_MAX_LENGTH, CACHE_FILLUP_THRESHOD, new PatternCache.StartDownloadingPatternsUntilFillup(StartDownloadingPatternsUntilFillup));
             viewCollection = new ViewCollection();
             myHttpClient = new MyHttpClient();
+            surfaceViewRefresher = new SurfaceViewRefresher();
 
         }
 
-        public bool onScreenClick(int x, int y)
+        public void onScreenClick(int x, int y)
         {
             if(viewCollection.GetView(x, y)==null)
             {
@@ -47,11 +51,11 @@ namespace SwitchMedia.App_Layer
                     view = new DView(DViewType.Square, patternCache.DequeuePattern(), screenX, screenY, radius);
                 }
                 viewCollection.AddView(view);
-                return true;
+
+                surfaceViewRefresher.Refresh();
             }
-            return false;
         }
-        public bool onScreenDoubleClick(int x, int y)
+        public void onScreenDoubleClick(int x, int y)
         {
             DView view = viewCollection.GetView(x, y);
             if(view!=null)
@@ -63,51 +67,59 @@ namespace SwitchMedia.App_Layer
                 {
                     viewCollection.UpdateView(view, patternCache.DequeuePattern());
                 }
-                return true;
+                surfaceViewRefresher.Refresh();
             }
-            return false;
 
         }
-        public bool onScreenDrag(int preX, int preY, int toX, int toY)
+        public void onScreenDrag(int preX, int preY, int toX, int toY)
         {
             DView view = viewCollection.GetView(preX, preY);
             if (view != null)
             {
                 viewCollection.MoveView(view, toX, toY);
-                
-                return true;
+
+                surfaceViewRefresher.Refresh();
             }
-            return false;
         }
 
         private void StartDownloadingPatternsUntilFillup(DPatternType patternType)
         {
             if (patternType == DPatternType.Color)
             {
-                Thread thread = new Thread(new ThreadStart(downloadingPatterns));
-                thread.Start();
+                if (!isImageThreadRunning)
+                {
+                    Thread thread = new Thread(new ThreadStart(downloadingPatterns));
+                    thread.Start();
+                }
             }
             else
             {
-                Thread thread = new Thread(new ThreadStart(downloadingColors));
-                thread.Start();
+                if (!isColorThreadRunning)
+                {
+                    Thread thread = new Thread(new ThreadStart(downloadingColors));
+                    thread.Start();
+                }
             }
         }
 
         private void downloadingPatterns()
-        {            
+        {
+            isImageThreadRunning = true;
             while (!patternCache.IsCacheFill(DPatternType.Image))
             {
                patternCache.EequeuePattern(myHttpClient.DownloadPattern());
             }
+            isImageThreadRunning = false;
         }
 
         private void downloadingColors()
         {
+            isColorThreadRunning = true;
             while (!patternCache.IsCacheFill(DPatternType.Color))
             {
                 patternCache.EequeueColor(myHttpClient.DownloadColor());               
             }
+            isColorThreadRunning = false;
         }
 
     }
