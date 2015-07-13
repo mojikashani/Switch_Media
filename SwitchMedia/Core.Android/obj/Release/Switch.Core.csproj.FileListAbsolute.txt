@@ -1,0 +1,10 @@
+D:\Doc\Xamarin\SwitchMedia\Core.Android\bin\Release\Switch.Core.dll
+D:\Doc\Xamarin\SwitchMedia\Core.Android\bin\Release\Switch.Core.pdb
+D:\Doc\Xamarin\SwitchMedia\Core.Android\bin\Release\Switch.Core.apk
+D:\Doc\Xamarin\SwitchMedia\Core.Android\bin\Release\Switch.Core-Signed.apk
+D:\Doc\Xamarin\SwitchMedia\Core.Android\obj\Release\Switch.Core.csprojResolveAssemblyReference.cache
+D:\Doc\Xamarin\SwitchMedia\Core.Android\obj\Release\Switch.Core.dll
+D:\Doc\Xamarin\SwitchMedia\Core.Android\obj\Release\Switch.Core.pdb
+D:\Doc\Xamarin\SwitchMedia\Core.Android\obj\Release\android\bin\Switch.Core.apk
+D:\Doc\Xamarin\SwitchMedia\Core.Android\obj\Release\R.cs.flag
+D:\Doc\Xamarin\SwitchMedia\Core.Android\obj\Release\uploadflags.txt

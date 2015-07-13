@@ -1,0 +1,7 @@
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\SwitchMedia.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\Mono.Android.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\mscorlib.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\Switch.Core.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\System.Core.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\System.dll
+D:\Doc\Xamarin\SwitchMedia\obj\Release\assemblies\System.Xml.dll
