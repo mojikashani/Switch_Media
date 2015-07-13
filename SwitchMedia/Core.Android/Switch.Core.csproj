@@ -47,6 +47,7 @@
     <Compile Include="ModelViews\DView.cs" />
     <Compile Include="IPatternCache.cs" />
     <Compile Include="IViewCollection.cs" />
+    <Compile Include="PatternCacheTest.cs" />
     <Compile Include="ViewCollection.cs" />
     <Compile Include="PatternCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

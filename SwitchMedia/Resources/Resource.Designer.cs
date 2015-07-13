@@ -64,7 +64,7 @@ namespace SwitchMedia
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int MyButton = 2131099648;
+			public const int mySurfaceView = 2131099648;
 			
 			static Id()
 			{

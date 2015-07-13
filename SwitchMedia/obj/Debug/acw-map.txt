@@ -1,3 +1,7 @@
+SwitchMedia.CustomViews.MySurfaceView, SwitchMedia;md529a4548833d8deee95496395751f42b6.MySurfaceView
+SwitchMedia.CustomViews.MySurfaceView, SwitchMedia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md529a4548833d8deee95496395751f42b6.MySurfaceView
+SwitchMedia.CustomViews.MySurfaceView;md529a4548833d8deee95496395751f42b6.MySurfaceView
+switchmedia.customviews.MySurfaceView;md529a4548833d8deee95496395751f42b6.MySurfaceView
 SwitchMedia.MainActivity, SwitchMedia;md5b49a35ef1515900a3d325724a6479a61.MainActivity
 SwitchMedia.MainActivity, SwitchMedia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b49a35ef1515900a3d325724a6479a61.MainActivity
 SwitchMedia.MainActivity;md5b49a35ef1515900a3d325724a6479a61.MainActivity

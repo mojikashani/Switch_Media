@@ -7,8 +7,8 @@ namespace Switch.Core
 {
     public class PatternCache : IPatternCache
     {
-        private Queue<DPattern> paterns;
-        private Queue<DPattern> colors;
+        public Queue<DPattern> paterns;
+        public Queue<DPattern> colors;
         private int maxLength;
         private int fillupThreshod;
         public delegate void StartDownloadingPatternsUntilFillup(DPatternType patternType);
@@ -29,7 +29,8 @@ namespace Switch.Core
             {
                 startDownloadingPatternsUntilFillup(DPatternType.Image);
                 Random rand=new Random(DateTime.Now.Millisecond);
-                return new DPattern(DPatternType.Color,"Auto",null,Convert.ToInt32(1677000*rand.NextDouble()));
+                int gray = Convert.ToInt32(255 * rand.NextDouble());
+                return new DPattern(DPatternType.Color,"Auto",null,gray+gray*256+gray*256*256);
             }else if(paterns.Count<fillupThreshod)
             {
                 startDownloadingPatternsUntilFillup(DPatternType.Image);
@@ -43,33 +44,34 @@ namespace Switch.Core
 
         public DPattern DequeueColor()
         {
-            if (paterns.Count == 0)
+            if (colors.Count == 0)
             {
                 startDownloadingPatternsUntilFillup(DPatternType.Color);
                 Random rand = new Random(DateTime.Now.Millisecond);
-                return new DPattern(DPatternType.Color, "Auto", null, Convert.ToInt32(1677000 * rand.NextDouble()));
+                int gray = Convert.ToInt32(255 * rand.NextDouble());
+                return new DPattern(DPatternType.Color, "Auto", null, gray + gray * 256 + gray * 256 * 256);
             }
-            else if (paterns.Count < fillupThreshod)
+            else if (colors.Count < fillupThreshod)
             {
                 startDownloadingPatternsUntilFillup(DPatternType.Color);
-                return paterns.Dequeue();
+                return colors.Dequeue();
             }
             else
             {
-                return paterns.Dequeue();
+                return colors.Dequeue();
             }
         }
 
-        void EequeuePattern(DPattern pattern)
+        public void EequeuePattern(DPattern pattern)
         {
             paterns.Enqueue(pattern);
         }
-        void EequeueColor(DPattern pattern)
+        public void EequeueColor(DPattern pattern)
         {
             colors.Enqueue(pattern);
         }
 
-        bool IsCacheFill(DPatternType patternType)
+        public bool IsCacheFill(DPatternType patternType)
         {
             if(patternType==DPatternType.Color)
             {

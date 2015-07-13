@@ -15,7 +15,7 @@ namespace Switch.Core
         }
         public void AddView(DView view)
         {
-            views.AddFirst(view);
+            views.AddLast(view);
         }
 
         public void UpdateView(DView view, DPattern newPattern)
@@ -28,14 +28,15 @@ namespace Switch.Core
             view.X = newX;
             view.Y = newY;
             views.Remove(view);
-            views.AddFirst(view);
+            views.AddLast(view);
         }
 
         public DView GetView(int x, int y)
         {
             DView view = null;
-            foreach(var viw in views)
+            for (var viewNode = views.Last; viewNode != null; viewNode = viewNode.Previous)
             {
+                DView viw = viewNode.Value;
                 if(viw.ViewType==DViewType.Circle)
                 {
                     if(Math.Sqrt((viw.X-x)*(viw.X-x)+(viw.Y-y)*(viw.Y-y))<=viw.Radius)
